@@ -31,7 +31,7 @@ function onImageClick(evt) {
   if (evt.target.nodeName !== "IMG") {
     return;
   }
-  const instance = basicLightBox.create(`
+  const instance = basicLightbox.create(`
       <img src="${evt.target.dataset.source}" width="800" height="600">
         `);
   instance.show();
