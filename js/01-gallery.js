@@ -36,11 +36,14 @@ function onImageClick(evt) {
         `);
   instance.show();
 
-  galleryEl.addEventListener("keydown", (evt) => {
+  const escapeKeyListener = (evt) => {
     if (evt.code === "Escape") {
       instance.close();
+      galleryEl.removeEventListener("keydown", escapeKeyListener);
     }
-  });
+  };
+
+  galleryEl.addEventListener("keydown", escapeKeyListener);
 }
 
 function blockStandardAction(evt) {
